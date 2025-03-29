@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './user.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const User = () => {
     //script for fetch data from db
@@ -20,9 +21,9 @@ const User = () => {
     },[]);
   return (
     <div className='userTable'>
-        <button type="button" class="btn btn-primary">
-            Add User <i class="fa-solid fa-user-plus"></i>
-            </button>
+        <Link to="/add" type="button" className="btn btn-primary">
+            Add User <i className="fa-solid fa-user-plus"></i>
+            </Link>
         <table className='table table-bordered'>
             <thead>
                 <tr>
@@ -42,11 +43,11 @@ const User = () => {
                     <td>{user.email}</td>
                     <td>{user.address}</td>
                     <td className='actionButtons'>
-                    <button type="button" class="btn btn-info">
-                    <i class="fa-solid fa-pen-to-square"></i>
+                    <button type="button" className="btn btn-info">
+                    <i className="fa-solid fa-pen-to-square"></i>
                     </button>
-                    <button type="button" class="btn btn-danger">
-                        <i class="fa-solid fa-trash"></i>
+                    <button type="button" className="btn btn-danger">
+                        <i className="fa-solid fa-trash"></i>
                     </button>
                          </td>
                 </tr>);
