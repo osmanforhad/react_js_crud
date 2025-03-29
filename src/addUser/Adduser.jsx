@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Adduser.css';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const Adduser = () => {
     //define variable for user input
@@ -25,7 +26,7 @@ const Adduser = () => {
             e.preventDefault();
             await axios.post("http://localhost:8000/api/user", user)
             .then((response) => {
-                console.log("User created Successfully");
+                toast.success(response.data.message,{position:"top-right"});
                 navigate("/");
             })
         } catch (error) {
