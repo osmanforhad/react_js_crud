@@ -4,7 +4,9 @@ import './user.css';
 const User = () => {
   return (
     <div className='userTable'>
-        <button type="button" class="btn btn-primary">Add User</button>
+        <button type="button" class="btn btn-primary">
+            Add User <i class="fa-solid fa-user-plus"></i>
+            </button>
         <table className='table table-bordered'>
             <thead>
                 <tr>
@@ -21,7 +23,14 @@ const User = () => {
                     <td>osman</td>
                     <td>osman@gmail.com</td>
                     <td>Feni</td>
-                    <td>Update || Delete</td>
+                    <td className='actionButtons'>
+                    <button type="button" class="btn btn-info">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+                    <button type="button" class="btn btn-danger">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                         </td>
                 </tr>
             </tbody>
         </table>
